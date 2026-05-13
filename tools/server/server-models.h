@@ -150,6 +150,10 @@ private:
     // not thread-safe, caller must hold mutex
     int can_fit(const buft_memory_map & bmm_req) const;
 
+    // check if active model count or memory limits would be exceeded
+    // not thread-safe, caller must hold mutex
+    bool limits_exceeded(const buft_memory_map & bmm_req) const;
+
 public:
     server_models(const common_params & params, int argc, char ** argv);
 
